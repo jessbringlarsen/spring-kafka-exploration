@@ -31,10 +31,10 @@ class SpringKafkaExplorationApplicationTests {
     Properties properties;
 
     @Container
-    static final KafkaContainer kafka = new KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:latest"));
+    static final KafkaContainer kafka = new KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:7.6.0"));
 
     @Test
-    void produce() {
+    void givenQuoteRequestExpectQuote() {
         producer.requestQuote();
 
         ConsumerRecord<?, ?> result = KafkaTestUtils.getOneRecord(kafka.getBootstrapServers(), properties.kafkaGroupId, properties.getQuoteTopic(), 0, true, false, Duration.ofMillis(5000));
