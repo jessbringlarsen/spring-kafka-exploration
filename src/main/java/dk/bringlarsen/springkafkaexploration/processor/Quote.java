@@ -16,4 +16,12 @@ public final class Quote {
     public Integer getPrice() {
         return price;
     }
+
+    @Override
+    public String toString() {
+        return "Quote{" +
+                "id='" + id + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }

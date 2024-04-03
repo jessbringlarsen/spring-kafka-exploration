@@ -9,6 +9,9 @@ public class Properties {
     @Value("${quote.kafka.bootstrap-servers}")
     String bootstrapServer;
 
+    @Value("${quote.kafka.group-id}")
+    String kafkaGroupId;
+
     @Value("${quote.topic.request}")
     String quoteRequestTopic;
 
@@ -17,6 +20,10 @@ public class Properties {
 
     public String getBootstrapServer() {
         return bootstrapServer;
+    }
+
+    public String getKafkaGroupId() {
+        return kafkaGroupId;
     }
 
     public String getQuoteRequestTopic() {
