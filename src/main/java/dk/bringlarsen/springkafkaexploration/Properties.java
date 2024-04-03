@@ -12,8 +12,8 @@ public class Properties {
     @Value("${quote.topic.request}")
     String quoteRequestTopic;
 
-    @Value("${quote.topic.reply}")
-    String quoteReplyTopic;
+    @Value("${quote.topic}")
+    String quoteTopic;
 
     public String getBootstrapServer() {
         return bootstrapServer;
@@ -23,7 +23,7 @@ public class Properties {
         return quoteRequestTopic;
     }
 
-    public String getQuoteReplyTopic() {
-        return quoteReplyTopic;
+    public String getQuoteTopic() {
+        return quoteTopic;
     }
 }
