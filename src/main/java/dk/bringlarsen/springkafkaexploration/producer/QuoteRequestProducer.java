@@ -19,7 +19,9 @@ public class QuoteRequestProducer {
         this.quoteRequestProducerTemplate = quoteRequestProducerTemplate;
     }
 
-    public void requestQuote() {
-        quoteRequestProducerTemplate.send(properties.getQuoteRequestTopic(), UUID.randomUUID().toString());
+    public String requestQuote() {
+        String quoteId = UUID.randomUUID().toString();
+        quoteRequestProducerTemplate.send(properties.getQuoteRequestTopic(), quoteId);
+        return quoteId;
     }
 }
